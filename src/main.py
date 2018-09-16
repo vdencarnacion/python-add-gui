@@ -5,10 +5,13 @@ Date: September 9, 2018
 
 import sys
 from PySide2.QtWidgets import QApplication
+from PySide2.QtGui import QGuiApplication, QWindow	
 from PySide2.QtWidgets import QLabel
 
-app = QApplication(sys.argv)
-# label = QLabel("Hello World!")
-label = QLabel("<font color=red size=40>Hello World!</font>")
-label.show()
-app.exec_()
+
+if __name__ == '__main__':
+    app = QGuiApplication(sys.argv)
+    window = QWindow()
+    window.setTitle('Hello world!')
+    window.show()
+    sys.exit(app.exec_())
